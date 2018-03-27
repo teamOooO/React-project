@@ -6,9 +6,7 @@ import Home from './layout/Home';
 class Layout extends Component{
   render(){
     return (
-      <div>
-        <Route path='/' exact component={Home}></Route>
-      </div>
+        <Home></Home>
     )
   }
 }

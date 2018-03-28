@@ -6,7 +6,8 @@ import 'antd/dist/antd.css';
 // import './libs/css/amazeui.min.css';
 // import './libs/css/amazeui.datatables.min.css';
 // import './libs/css/app.css';
-import './styles/hoo.css';
+import './styles/signin.css';
+import './styles/home.css';
 
 
 import App from './components/App';

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Menu, Breadcrumb, Icon} from 'antd';
 
-class HomeRoute extends Component{
+class ProductListRoute extends Component{
   render() {
     return(
       <Menu.Item key="setting">
@@ -11,4 +11,4 @@ class HomeRoute extends Component{
     )
   }
 }
-export default HomeRoute;
+export default ProductListRoute;

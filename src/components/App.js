@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 
-import Home from './layout/Home';
+import Signin from './layout/Signin';
 
-class Layout extends Component{
+import Home from './layout/Home';
+import HomeRoute from './route/HomeRoute';
+import HomeCon from './route-con/HomeCon';
+
+import ProductListRoute from './route/ProductListRoute';
+import ProductListCon from './route-con/ProductListCon';
+
+class App extends Component{
   render(){
     return (
-      <div>
-        <Route path='/' exact component={Home}></Route>
-      </div>
+      <Switch>
+        <Route path='/' exact component={Signin}></Route>
+        <Route path='/home' component={Home}></Route>
+      </Switch>
     )
   }
 }
 
 
-class App extends Component {
-  render() {
-    return (
-      <Layout></Layout>
-    );
-  }
-}
+// class App extends Component {
+//   render() {
+//     return (
+//       <Layout></Layout>
+//     );
+//   }
+// }
 
 export default App;

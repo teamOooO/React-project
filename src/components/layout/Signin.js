@@ -1,7 +1,45 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import { connect } from 'react-redux'
 
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
+
+
+const mapStateToProps = (state) => {
+  return {
+    storeList: state
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadData: (list, his, username, password) => {
+      dispatch(() => {
+        fetch('/api/users/signin', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(  list  ),
+          data: {
+            username,
+            password
+          }
+        })
+          .then((response) => response.json())
+          .then((result) => {
+            dispatch({
+              type:"expression",
+              name:result.data.username
+            })
+            if (result.data.success) {
+                his
+            }
+          })
+      })
+    }
+  }
+}
+
+
 
 class Signin extends Component {
   handleSubmit = (e) => {
@@ -12,20 +50,15 @@ class Signin extends Component {
       }
     });
 
-    // fetch('/api/users/signin', {
-    //   method: 'POST',
-    //   headers: {'Content-Type': 'application/json'},
-    //   body: JSON.stringify(this.props.form.getFieldsValue())
-    // })
-    //   .then((response) => response.json())
-    //   .then((result) => {
-    //     if (result.data.success) {
-    //       this.props.history.push('/home')
-    //     }
-    //   })
-    this.props.history.push('/home')
+    let his = this.props.history.push('/')
+    let list = this.props.form.getFieldsValue()
+    let username = this.props.form.getFieldsValue().username;
+    let password = this.props.form.getFieldsValue().password;
+    this.props.loadData(list,his,username,password)
   }
-
+  componentDidMount(){
+    console.log(this.props)
+  }
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
@@ -55,4 +88,5 @@ class Signin extends Component {
   }
 }
 
-export default Form.create()(Signin);
+
+export default connect(mapStateToProps,mapDispatchToProps)(Form.create()(Signin))

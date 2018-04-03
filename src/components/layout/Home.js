@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
-import {Menu, Breadcrumb, Icon} from 'antd';
+import {Menu, Breadcrumb, Icon, Button} from 'antd';
 
-// import BrowserDemo from 'site/theme/template/BrowserDemo';
-// import img1 from './libs/img/logo.png';
-// const SubMenu = Menu.SubMenu;
+import Welcome from './Welcome';
+import Signin from './Signin';
+import OnSale from './OnSale';
+import StoreHouse from './StoreHouse';
+import {
+  Route,
+  Link
+} from 'react-router-dom'
+
 
 class AsideCollapse extends Component {
   constructor(props) {
@@ -12,6 +18,7 @@ class AsideCollapse extends Component {
       collapse: true
     }
     this.onCollapseChange = this.onCollapseChange.bind(this)
+    console.log(this);
   }
 
   onCollapseChange() {
@@ -30,23 +37,23 @@ class AsideCollapse extends Component {
         <Menu mode="inline" theme="dark" defaultSelectedKeys={['user']}>
           <Menu.Item type="home">
             <Icon type="home"/>
-            <span className="nav-text">首页</span>
+            <Link className="nav-text" to="/">首页</Link>
           </Menu.Item>
           <Menu.Item key="setting">
             <Icon type="setting"/>
-            <span className="nav-text">商品列表</span>
+            <Link className="nav-text" to='/list'>商品列表</Link>
           </Menu.Item>
           <Menu.Item key="laptop">
             <Icon type="laptop"/>
-            <span className="nav-text">促销活动</span>
+            <Link className="nav-text" to="/onsale">促销活动</Link>
           </Menu.Item>
           <Menu.Item key="notification">
             <Icon type="notification"/>
-            <span className="nav-text">轮播管理</span>
+            <Link className="nav-text" to="/banner">轮播管理</Link>
           </Menu.Item>
           <Menu.Item key="folder">
             <Icon type="folder"/>
-            <span className="nav-text">库存管理</span>
+            <Link className="nav-text" to="/storehouse">库存管理</Link>
           </Menu.Item>
 
         </Menu>
@@ -61,7 +68,12 @@ class AsideCollapse extends Component {
       {/* 右侧 */}
       <div className="ant-layout-main">
         {/* 头部 */}
-        <div className="ant-layout-header">hello~ 请登录</div>
+        <div className="ant-layout-header header-text">
+          <span className="signin-text">hello~ 请登录</span>
+          <Link to="/signin">
+            <Button type="primary">登录</Button>
+          </Link>
+        </div>
         {/* 内容区 */}
         <div className="ant-layout-breadcrumb">
           <Breadcrumb>
@@ -72,11 +84,11 @@ class AsideCollapse extends Component {
         </div>
         <div className="ant-layout-container">
           <div className="ant-layout-content">
-            <div style={{
-                height: 400
-              }}>
-              内容区域
-            </div>
+          <div style={{minHeight:400}}>
+            <Route path='/' exact component={Welcome}/>
+            <Route path='/signin' component={Signin} ></Route>
+            <Route path='/onsale' component={OnSale}/>
+            <Route path='/storehouse' component={StoreHouse}/></div>
           </div>
         </div>
         <div className="ant-layout-footer">

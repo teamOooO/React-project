@@ -136,3 +136,11 @@
   border-top: 1px solid #e9e9e9;
   width: 100%;
 }
+
+
+.header-text{
+  text-align: right;
+}
+.signin-text{
+  margin-right: 20px;
+}

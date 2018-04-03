@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 <<<<<<< HEAD
 import { Route } from 'react-router-dom'
@@ -13,7 +14,15 @@ class App extends Component {
    
       )
 =======
+=======
+<<<<<<< HEAD
+import React, { Component } from 'react'
+
+>>>>>>> 46815b5e4cd1578bd23474243dab3443d3cfac7b
 import {Switch, Route, Link} from 'react-router-dom';
+=======
+import React, { Component } from 'react';
+>>>>>>> zby
 
 import Home from './layout/Home';
 
@@ -26,7 +35,7 @@ class Layout extends Component{
 }
 
 
-class App extends Component {
+class App extends Component { 
   render() {
     return (
       <Layout></Layout>

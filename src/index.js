@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { HashRouter as Router } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
@@ -27,6 +28,8 @@ ReactDOM.render(
 =======
 =======
 >>>>>>> 46815b5e4cd1578bd23474243dab3443d3cfac7b
+=======
+>>>>>>> zjm
 
 import App from './components/App';
 
@@ -38,9 +41,16 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import slideshowReducer from './store/slideshowReducer'
 
+<<<<<<< HEAD
 const store = createStore(slideshowReducer, applyMiddleware(thunk))
+=======
+import thunk from 'redux-thunk'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+>>>>>>> zjm
 
 
+<<<<<<< HEAD
 ReactDOM.render(<Provider store={store}><Router><App /></Router></Provider>, document.getElementById('root'));
 
 =======
@@ -62,3 +72,11 @@ ReactDOM.render(<Router><App/></Router>, document.getElementById('root'));
 ReactDOM.render(<Provider store={store}><Router><App/></Router></Provider>, document.getElementById('root'));
 >>>>>>> zby
 >>>>>>> 46815b5e4cd1578bd23474243dab3443d3cfac7b
+=======
+import {HashRouter as Router} from 'react-router-dom';
+import reducer from './store/reducer'
+
+const store = createStore(reducer, applyMiddleware(thunk))
+
+ReactDOM.render( <Provider store={store} ><Router><App/></Router></Provider> , document.getElementById('root'));
+>>>>>>> zjm

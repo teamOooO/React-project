@@ -3,8 +3,12 @@ import {Menu, Breadcrumb, Icon} from 'antd';
 import Welcome from './Welcome';
 import OnSale from './OnSale';
 import StoreHouse from './StoreHouse';
+<<<<<<< HEAD
 import zApp from '../zComponents/zApp'
 import zList from '../zComponents/list'
+=======
+import AddItem from '../onsale/AddItem';
+>>>>>>> zby
 import {
   Route,
   Link
@@ -78,6 +82,7 @@ class AsideCollapse extends Component {
         </div>
         <div className="ant-layout-container">
           <div className="ant-layout-content">    
+<<<<<<< HEAD
             <div style={{minHeight:400}}>     
               <Route path='/' exact component={Welcome}/>
               <Route path='/onsale' component={OnSale}/>
@@ -86,6 +91,13 @@ class AsideCollapse extends Component {
               <Route path='/list' component={zList}></Route>
               <Route path='/edit/:id' component={zList}></Route>
             </div> 
+=======
+          <div style={{minHeight:400}}>     
+            <Route path='/' exact component={Welcome}/>
+            <Route path='/onsale' component={OnSale}/>
+            <Route path='/storehouse' component={StoreHouse}/>
+            <Route path='/add' component={AddItem}/></div> 
+>>>>>>> zby
           </div>
         </div>
         <div className="ant-layout-footer">

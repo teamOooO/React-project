@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import React, { Component } from 'react'
 
 import {Switch, Route, Link} from 'react-router-dom';
+=======
+import React, { Component } from 'react';
+>>>>>>> zby
 
 import Home from './layout/Home';
 

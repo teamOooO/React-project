@@ -76,10 +76,11 @@ class AsideCollapse extends Component {
         </div>
         <div className="ant-layout-container">
           <div className="ant-layout-content">    
-          <div style={{height:400}}>     
-            <Route path='/' exact component={Welcome}/>
-            <Route path='/onsale' component={OnSale}/>
-            <Route path='/storehouse' component={StoreHouse}/></div> 
+            <div style={{height:400}}>     
+              <Route path='/' exact component={Welcome}/>
+              <Route path='/onsale' component={OnSale}/>
+              <Route path='/storehouse' component={StoreHouse}/>
+            </div> 
           </div>
         </div>
         <div className="ant-layout-footer">

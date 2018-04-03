@@ -3,6 +3,7 @@ import {Menu, Breadcrumb, Icon} from 'antd';
 import Welcome from './Welcome';
 import OnSale from './OnSale';
 import StoreHouse from './StoreHouse';
+import AddItem from '../onsale/AddItem';
 import {
   Route,
   Link
@@ -76,10 +77,11 @@ class AsideCollapse extends Component {
         </div>
         <div className="ant-layout-container">
           <div className="ant-layout-content">    
-          <div style={{height:400}}>     
+          <div style={{minHeight:400}}>     
             <Route path='/' exact component={Welcome}/>
             <Route path='/onsale' component={OnSale}/>
-            <Route path='/storehouse' component={StoreHouse}/></div> 
+            <Route path='/storehouse' component={StoreHouse}/>
+            <Route path='/add' component={AddItem}/></div> 
           </div>
         </div>
         <div className="ant-layout-footer">

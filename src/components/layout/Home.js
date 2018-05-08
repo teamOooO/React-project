@@ -73,7 +73,7 @@ class AsideCollapse extends Component {
           <Breadcrumb>
             <Breadcrumb.Item>首页</Breadcrumb.Item>
             <Breadcrumb.Item>应用列表</Breadcrumb.Item>
-            <Breadcrumb.Item>某应用</Breadcrumb.Item>
+            <Breadcrumb.Item>某应用</Breadcrumb.Item >
           </Breadcrumb>
         </div>
         <div className="ant-layout-container">

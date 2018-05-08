@@ -3,7 +3,6 @@ export default (state=[],action) => {
 		case 'find':
 			return action.findList
 		case 'remove':
-		console.log(state)
 			return state.filter((item) => {
 				console.log(item)
 				return item.key != action.id
